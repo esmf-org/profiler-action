@@ -15,7 +15,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    -it -v $(pwd)/traces:/home/traces esmf-profiler-image esmf-profiler -t /home/traces -n $OUTPUT_NAME -o /home/traces/output
+    esmf-profiler -t /home/traces -n $OUTPUT_NAME -o /home/traces/output
 branding:
   icon: 'code'
   color: 'yellow'
