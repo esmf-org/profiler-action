@@ -14,8 +14,8 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    esmf-profiler -t /home/traces -n $OUTPUT_NAME -o /home/traces/output
+  entrypoint: 'go.sh'
+    
 branding:
   icon: 'code'
   color: 'yellow'
