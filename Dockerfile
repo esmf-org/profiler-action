@@ -7,6 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Update apt
 RUN apt-get update 
 
+#TODO use add for tar
+COPY ./test/fixtures/test-traces /home/traces
+
 # TODO specify python depende
 # Install dependencies
 RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 python3-pip python3-dev bison flex libglib2.0-dev
@@ -29,5 +32,7 @@ ENV LD_LIBRARY_PATH="/home/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/
 # Install the profiler via local PIP
 # TODO https://github.com/esmf-org/esmf-profiler/issues/35
 RUN ["python3", "-m", "pip", "install", "-e", "."]
+
+COPY go.sh /home/esmf-profiler/go.sh
 
 
