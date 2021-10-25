@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -it esmf-profiler -t /home/traces -n 'TEST_OUTPUT' -o /home/traces/output
+esmf-profiler -t /home/esmf-profiler/tests/fixtures/test-traces-large -n $1 -o /home/
