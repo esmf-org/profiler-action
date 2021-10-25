@@ -14,7 +14,7 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: "esmf-profiler -t /home/esmf-profiler/tests/fixtures/test-traces-large -n $1 -o /home/esmf-profiler/output" 
+  entrypoint: "esmf-profiler -t /home/esmf-profiler/tests/fixtures/test-traces-large -n 'test_action' -o /home/esmf-profiler" 
     
 branding:
   icon: 'code'
