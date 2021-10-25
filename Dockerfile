@@ -7,12 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Update apt
 RUN apt-get update 
 
-#TODO use add for tar
-COPY ./test/fixtures/test-traces /home/traces
-
 # TODO specify python depende
 # Install dependencies
-RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 python3-pip python3-dev bison flex libglib2.0-dev
+RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 python3-pip python3-dev bison flex libglib2.0-dev tree
 
 # Clone profiler
 # TODO: Specifiying a branch here, should be main once we get into prod
