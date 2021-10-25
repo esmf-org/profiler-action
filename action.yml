@@ -4,7 +4,7 @@ name: 'Generate Report'
 author: 'Ryan Long <ryan.long@noaa.gov>'
 description: 'Generates a graphical web report from binary traces in the version directory'
 inputs:
-  report-name:  
+  report_name:  
     description: 'Name of the report'
     required: false
     default: 'default-report'
