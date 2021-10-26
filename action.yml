@@ -8,13 +8,10 @@ inputs:
     description: 'Name of the report'
     required: false
     default: 'default-report'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: "/home/esmf-profiler/go.sh" 
+  entrypoint: "~/esmf-profiler/go.sh" 
     
 branding:
   icon: 'code'

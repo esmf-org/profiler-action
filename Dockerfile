@@ -15,10 +15,10 @@ RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 pyth
 # TODO: Specifiying a branch here, should be main once we get into prod
 WORKDIR /home
 RUN git clone -b development https://github.com/esmf-org/esmf-profiler.git
-WORKDIR /home/esmf-profiler
 
 # TODO find out about depth 1 flag for speed
 # install OS dependencies
+WORKDIR /home/esmf-profiler
 RUN ./install_dependencies.sh
 
 # TODO 
@@ -32,8 +32,6 @@ RUN ["python3", "-m", "pip", "install", "-e", "."]
 
 ADD traces/trace.tar.gz /home/esmf-profiler/traces/
 
-RUN ["ls", "-lah", "/home/esmf-profiler/traces"]
-
-COPY go.sh /home/esmf-profiler/go.sh
+COPY go.sh .
 
 
