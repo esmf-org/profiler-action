@@ -1,2 +1,3 @@
 #!/bin/bash
-esmf-profiler -t /home/esmf-profiler/tests/fixtures/test-traces-large -n 'statictest' -o /home/
+
+esmf-profiler -t /github/workspace/tests/fixtures/test-traces-large -n $1 -o /github/workspace/tests/fixtures/test-traces-large
