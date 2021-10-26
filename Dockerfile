@@ -30,6 +30,8 @@ ENV LD_LIBRARY_PATH="/home/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/
 # TODO https://github.com/esmf-org/esmf-profiler/issues/35
 RUN ["python3", "-m", "pip", "install", "-e", "."]
 
+COPY traces/ /home/traces
+
 COPY go.sh /home/esmf-profiler/go.sh
 
 
