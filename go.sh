@@ -1,3 +1,3 @@
 #!/bin/bash
 
-esmf-profiler -t /home/traces -n 'testa' -o /home/traces && pwd && ls -lah /home/traces
+esmf-profiler -t /home/esmf-profiler/traces -n 'testa' -o /home/esmf-profiler/traces && pwd && ls -lah /home/traces
