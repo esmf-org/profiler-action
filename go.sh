@@ -1,3 +1,3 @@
 #!/bin/bash
 
-esmf-profiler -t /home/traces -n $1 -o /home/traces/output
+esmf-profiler -t /home/traces -n 'test_a' -o /home/traces/output
