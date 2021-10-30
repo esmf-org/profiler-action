@@ -31,6 +31,7 @@ RUN ["python3", "-m", "pip", "install", "-e", "."]
 
 ADD traces/trace.tar.gz traces/
 
-COPY go.sh .
+RUN ["esmf-profiler", "-t", "traces", "-n", "testa", "-o", "/output"]
+
 
 

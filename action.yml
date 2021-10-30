@@ -11,7 +11,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: "~/esmf-profiler/go.sh" 
     
 branding:
   icon: 'code'
