@@ -36,7 +36,8 @@ RUN ["python3", "-m", "pip", "install", "-e", "."]
 ADD traces/trace.tar.gz /home/traces/
 
 CMD ["esmf-profiler", "-t", "/home/traces", "-n", "testa", "-o", "/home/traces/output"]
-CMD ["tar", "czvf", "/web_report.tar.gz", "/home/traces/output"]
+CMD ["tree"]
+CMD ["tar", "czvf", "web_report.tar.gz", "/home/traces/output"]
 
 
 
