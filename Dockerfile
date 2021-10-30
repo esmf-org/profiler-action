@@ -2,6 +2,9 @@ FROM ubuntu:20.04
 
 MAINTAINER "Ryan Long <ryan.long@noaa.gov>"
 
+# Makes installation noninteractive, LEAVE THIS IN!
+ENV DEBIAN_FRONTEND noninteractive
+
 # Update apt
 RUN apt-get update 
 
