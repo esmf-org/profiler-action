@@ -33,12 +33,11 @@ ENV LD_LIBRARY_PATH="/home/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/
 # TODO https://github.com/esmf-org/esmf-profiler/issues/35
 RUN ["python3", "-m", "pip", "install", "-e", "."]
 
-ADD traces/trace.tar.gz /home/traces/
+ADD /github/workspace/traces/trace.tar.gz /home/traces
 
 WORKDIR /home/traces
-CMD ["esmf-profiler", "-t", "/home/traces", "-n", "testa", "-o", "/home/traces/output"]
-CMD ["echo", "tree"]
-CMD ["tar", "czvf", "web_report.tar.gz", "output"]
+CMD ["esmf-profiler", "-t", "/home/traces", "-n", "testa", "-o", "/github/workspace/traces"]
+
 
 
 
