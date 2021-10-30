@@ -14,18 +14,20 @@ RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 pyth
 
 # Clone profiler
 # TODO: Specifiying a branch here, should be main once we get into prod
+WORKDIR /home
 RUN git clone -b development https://github.com/esmf-org/esmf-profiler.git
+WORKDIR /home/esmf-profiler
 
-RUN pwd && ls -lah && ls -lah / 
+RUN ./install_dependencies.sh
 
 # TODO find out about depth 1 flag for speed
 # install OS dependencies
-RUN ./emsf-profiler/install_dependencies.sh
+# RUN . /emsf-profiler/install_dependencies.sh
 
 # TODO 
 # Set envs for Python and LD_Library
-ENV PYTHONPATH="~/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/lib/python3.8/site-packages:$PYTHONPATH"
-ENV LD_LIBRARY_PATH="~/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/lib:$LD_LIBRARY_PATH"
+ENV PYTHONPATH="/home/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/lib/python3.8/site-packages:$PYTHONPATH"
+ENV LD_LIBRARY_PATH="/home/esmf-profiler/dependencies/INSTALL/babeltrace2-2.0.4/lib:$LD_LIBRARY_PATH"
 
 # Install the profiler via local PIP
 # TODO https://github.com/esmf-org/esmf-profiler/issues/35
