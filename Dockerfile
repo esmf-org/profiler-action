@@ -6,7 +6,7 @@ MAINTAINER "Ryan Long <ryan.long@noaa.gov>"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Update apt
-RUN apt-get update 
+RUN sudo apt-get autoclean; sudo apt-get update;
 
 # TODO specify python depende
 # Install dependencies
