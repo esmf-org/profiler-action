@@ -6,7 +6,7 @@ MAINTAINER "Ryan Long <ryan.long@noaa.gov>"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Update apt
-RUN sudo apt-get autoclean; sudo apt-get update;
+RUN apt-get autoclean; apt-get update;
 
 # TODO specify python depende
 # Install dependencies
@@ -15,6 +15,8 @@ RUN apt-get install -y -q git build-essential libssl-dev libffi-dev python3 pyth
 # Clone profiler
 # TODO: Specifiying a branch here, should be main once we get into prod
 RUN git clone -b development https://github.com/esmf-org/esmf-profiler.git
+
+RUN pwd && ls -lah && ls -lah / 
 
 # TODO find out about depth 1 flag for speed
 # install OS dependencies
