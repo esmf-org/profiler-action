@@ -18,7 +18,7 @@ RUN git clone -b development https://github.com/esmf-org/esmf-profiler.git
 
 # TODO find out about depth 1 flag for speed
 # install OS dependencies
-RUN emsf-profiler/install_dependencies.sh
+RUN ./emsf-profiler/install_dependencies.sh
 
 # TODO 
 # Set envs for Python and LD_Library
